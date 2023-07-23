@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MCDiscordBot.Config"
+             Title="Config"
+             BackgroundColor="#171717">
+
+    <VerticalStackLayout
+        Spacing="10"
+        Margin="25,10, 25, 0" >
+        <Grid
+            x:Name="maingrid"
+            ColumnDefinitions="150, *, 150"
+            RowDefinitions="50,50,50,50,50,50, *"
+            HeightRequest="400">
+            <!--First row: Bot Token-->
+            <Label
+                Text="Bot token: "
+                FontSize="18" 
+                Grid.Column="0"
+                Grid.Row="0"
+                VerticalOptions="Center"/>
+            <Entry 
+                x:Name="TokenField"
+                Focused="configField_Focused"
+                IsPassword="True"
+                Grid.Column="1"
+                Grid.Row="0"
+                Margin="5,0"
+                VerticalOptions="Center"
+                HorizontalOptions="Fill"/>
+            <Button
+                x:Name="showtokenbutton"
+                Clicked="showtokenbutton_Clicked"
+                Text="Show Token"
+                FontSize="18"
+                BackgroundColor="#515151"
+                HorizontalOptions="FillAndExpand"
+                Grid.Column="2"
+                Grid.Row="0" />
+            <!--Second row: server dir-->
+            <Label
+                Text="Server Directory: "
+                FontSize="18" 
+                Grid.Column="0"
+                Grid.Row="1"
+                VerticalOptions="Center"/>
+            <Entry 
+                x:Name="ServerField"
+                Placeholder="E.x. D:/AetherServer/"
+                Focused="configField_Focused"
+                IsPassword="False"
+                Grid.Column="1"
+                Grid.Row="1"
+                Margin="5,0"
+                VerticalOptions="Center" />
+            <!--Third row: Server Args-->
+            <Label
+                Text="Server Args: "
+                FontSize="18"
+                Grid.Column="0"
+                Grid.Row="2"
+                VerticalOptions="Center" />
+            <Entry 
+                x:Name="ArgsField"
+                IsPassword="False"
+                Placeholder="E.x. -Xms 1000mb -Xmx 8000mb nogui"
+                Focused="configField_Focused"
+                Grid.Column="1"
+                Grid.Row="2"
+                Margin="5,0"
+                VerticalOptions="Center" />
+            <!--Fourth Row: temporary output box-->
+            <Label
+                Text="Java 8 Dir: "
+                FontSize="18"
+                Grid.Column="0"
+                Grid.Row="3"
+                VerticalOptions="Center" />
+            <Entry 
+                x:Name="JavaDirField"
+                IsPassword="False"
+                Placeholder="C:\Program Files\Java\jre1.8.0_202\bin\java.exe"
+                Focused="configField_Focused"
+                Grid.Column="1"
+                Grid.Row="3"
+                Margin="5,0"
+                VerticalOptions="Center" />
+            
+
+
+
+
+        </Grid>
+        <!--Bottom row: Save, Reset, etc...-->
+        <Grid
+            ColumnDefinitions="*, Auto, Auto, Auto"
+            RowDefinitions="50"
+            Grid.Row="7"
+            Grid.Column="0" >
+            <Button
+                x:Name="loadconfig"
+                Clicked="loadconfig_Clicked"
+                Text="Load"
+                FontSize="18"
+                BackgroundColor="#515151"
+                Grid.Column="1"
+                Grid.Row="0" />
+            <Button
+                x:Name="defaultconfig"
+                Clicked="defaultconfig_Clicked"
+                Text="Default"
+                FontSize="18"
+                BackgroundColor="#515151"
+                Grid.Column="2"
+                Grid.Row="0" />
+            <Button
+                x:Name="saveconfig"
+                Clicked="saveconfig_Clicked"
+                Text="Save"
+                FontSize="18"
+                BackgroundColor="#515151"
+                Grid.Column="3"
+                Grid.Row="0" />
+        </Grid>
+        <!-- Feedback Label-->
+        <Grid
+            ColumnDefinitions="500, 235, *"
+            RowDefinitions="50"
+            Grid.Row="8"
+            Grid.Column="0" >
+            <Label
+                x:Name="Feedback"
+                Text=""
+                FontSize="18"
+                BackgroundColor="Red"
+                Grid.Column="1"
+                Grid.Row="0"
+                Margin="25,0,0,25"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

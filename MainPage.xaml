@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MCDiscordBot.MainPage">
+
+
+    <VerticalStackLayout
+        Spacing="10"
+        Padding="25,0,25,0"
+        BackgroundColor="#171717">
+        <HorizontalStackLayout
+            Spacing="10" >
+            <Label
+                Text="Server Status: "
+                FontSize="32" />
+            <Label
+                x:Name="statuscolor"
+                Text="OFFLINE"
+                TextColor="Red"
+                FontSize="32" />
+        </HorizontalStackLayout>
+        
+        <Label
+                Text="Console Log"
+                FontSize="18"/>
+
+        
+        <ScrollView
+            x:Name="logboxScroll"
+            VerticalOptions="Fill"
+            BackgroundColor="#343434"
+            MinimumHeightRequest="300" 
+            MaximumHeightRequest="300">
+            <Editor
+                x:FieldModifier="Public"
+                x:Name="logbox"
+                Placeholder="Console Log Goes Here"
+                AutoSize="TextChanges"
+                IsReadOnly="true"
+                 />
+        </ScrollView>
+        <Grid
+            ColumnDefinitions="*, 125, 125" 
+            RowDefinitions="Auto"
+            HorizontalOptions="Fill" >
+            
+
+            <Button
+                x:Name="serverbutton"
+                Text="Start Server"
+                TextColor="White"
+                BackgroundColor="#515151"
+                Clicked="OnStartServerClicked"
+                
+                HorizontalOptions="End"
+                Grid.Column="2"
+                />
+        </Grid>
+        
+        
+    </VerticalStackLayout>
+
+</ContentPage>
